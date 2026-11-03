@@ -9,16 +9,19 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.net.http.HttpResponse
 
+fun badlyFormatted() {
+    val x = 1
+}
+
 @SpringBootApplication
 @RestController
 class ForkfulApplication {
-	
-	@GetMapping("/hello")
-    fun hello(@RequestParam(defaultValue = "World") name: String) : ResponseEntity<String> {
-      return ResponseEntity("Hello ${name}}",HttpStatus.OK)
-    }
+    @GetMapping("/hello")
+    fun hello(
+        @RequestParam(defaultValue = "World") name: String,
+    ): ResponseEntity<String> = ResponseEntity("Hello $name}", HttpStatus.OK)
 }
 
 fun main(args: Array<String>) {
-	runApplication<ForkfulApplication>(*args)
+    runApplication<ForkfulApplication>(*args)
 }

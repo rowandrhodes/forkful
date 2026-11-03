@@ -6,9 +6,8 @@ import kotlin.test.assertEquals
 
 @SpringBootTest
 class ForkfulApplicationTests {
-
-	@Test
-	fun contextLoads() {
+    @Test
+    fun contextLoads() {
         assertEquals(1, 1)
-	}
+    }
 }
