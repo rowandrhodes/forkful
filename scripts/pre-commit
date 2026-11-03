@@ -2,6 +2,6 @@
 ./gradlew spotlessCheck --quiet
 status=$?
 if [ $status -ne 0 ]; then
-  echo "Formatting issues found. Run ./gradlew spotlessApply, re-stage, and commit again."
+  echo "Formatting issues found. Running ./gradlew spotlessApply, re-stage, and commit again."
 fi
 exit $status
