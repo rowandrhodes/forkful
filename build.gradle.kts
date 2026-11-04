@@ -38,11 +38,12 @@ kotlin {
 }
 
 spotless {
-    kotlin {
-        ktlint()
-    }
-    kotlinGradle {
-        ktlint()
+    kotlin { ktlint() } // reads .editorconfig
+    kotlinGradle { ktlint() } // formats the build scripts too
+    format("misc") {
+        target("**/*.md", "**/*.yml", "**/*.yaml", "**/*.sql", ".gitignore")
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 
